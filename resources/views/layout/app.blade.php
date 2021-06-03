@@ -15,8 +15,8 @@
 
     <title>{{ config('app.name') . ' | '}} @yield('title')</title>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('js/app.js') }}"></script>
 </head>
 <body>
     <x-navbar></x-navbar>
