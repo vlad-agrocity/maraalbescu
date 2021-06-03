@@ -1,0 +1,43 @@
+.nav-container {
+    @apply fixed top-0 left-0 w-screen flex items-center bg-white z-10;
+
+    .nav-content {
+        @apply flex justify-between py-5;
+
+        .nav-items {
+            @apply bg-white flex w-full justify-between items-center;
+
+            .nav-logo {
+                @apply uppercase tracking-widest font-bold cursor-pointer min-w-max;
+            }
+
+            .burger-menu {
+                @apply absolute right-0 mr-4 lg:hidden;
+            }
+        }
+
+        .nav-links {
+            @apply space-x-10 hidden lg:flex;
+        }
+    }
+}
+
+.mobile-links {
+    @apply absolute z-0 bottom-0 h-screen w-screen bg-white flex flex-col justify-center items-center space-y-3 transform translate-y-full opacity-0 transition ease-in-expo;
+
+    &.active {
+        @apply translate-y-0 opacity-100 transition ease-out-expo;
+    }
+}
+
+.nav-link {
+    @apply tracking-widest uppercase;
+
+    &:hover {
+        @apply underline;
+    }
+
+    &.active {
+        @apply font-bold;
+    }
+}
