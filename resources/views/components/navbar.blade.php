@@ -1,4 +1,4 @@
-<div x-data="data()">
+<div x-data="data()" x-init="windowSizeEventListener">
     <nav class="nav-container">
         <div class="site-content nav-content">
             <div class="nav-items">
@@ -36,9 +36,17 @@
 <script>
     function data() {
         return {
-            showMobileMenu: false
+            showMobileMenu: false,
+            windowSizeEventListener: function () {
+                window.addEventListener("resize", () => {
+                    if (document.documentElement.clientWidth > 1024)
+                        this.showMobileMenu = false;
+                });
+            }
         }
     }
+
+
 </script>
 @endpush
 

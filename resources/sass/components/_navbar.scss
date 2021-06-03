@@ -1,18 +1,21 @@
 .nav-container {
-    @apply fixed top-0 left-0 w-screen flex items-center bg-white z-10;
+    @apply fixed top-0 left-0 w-screen flex items-center bg-black z-10 shadow-sm;
+
 
     .nav-content {
-        @apply flex justify-between py-5;
+        @apply flex justify-between pt-6 pb-8 lg:pt-20;
 
         .nav-items {
-            @apply bg-white flex w-full justify-between items-center;
+            @apply flex w-full justify-between items-center;
 
             .nav-logo {
-                @apply uppercase tracking-widest font-bold cursor-pointer min-w-max;
+                @apply font-bold cursor-pointer min-w-max text-gray-100;
+                font-family: 'Homemade Apple', sans-serif;
+                transform: translate(0, 7px);
             }
 
             .burger-menu {
-                @apply absolute right-0 mr-4 lg:hidden;
+                @apply text-gray-100 absolute right-0 mr-4 lg:hidden;
             }
         }
 
@@ -23,21 +26,22 @@
 }
 
 .mobile-links {
-    @apply absolute z-0 bottom-0 h-screen w-screen bg-white flex flex-col justify-center items-center space-y-3 transform translate-y-full opacity-0 transition ease-in-expo;
+    @apply absolute z-0 top-0 h-screen w-screen flex flex-col justify-center items-center space-y-5 transform -translate-y-full opacity-0 transition duration-300 ease-in-out;
 
     &.active {
-        @apply translate-y-0 opacity-100 transition ease-out-expo;
+        @apply translate-y-0 opacity-100;
     }
 }
 
 .nav-link {
-    @apply tracking-widest uppercase;
+    @apply text-gray-400 text-2xl;
+    font-family: 'Caveat', sans-serif;
 
     &:hover {
-        @apply underline;
+        @apply text-gray-100;
     }
 
     &.active {
-        @apply font-bold;
+        @apply font-bold text-white;
     }
 }
